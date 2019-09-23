@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="position:absolute; left:220px; top:175px;">Do you love me?</h1>
+   <input type="button" value=" YES " onclick="yes()" id="btnYes" style="position:absolute; left:285px; top:235px;">
+   <input type="button" id="sdsd" value="  NO  "style="position:absolute; left:360px; top:235px;">
+   <script>
+       function yes(){
+           alert('click vào NO ')
+        }
+        $('#sdsd').mouseover(function(){
+            var x = Math.floor((Math.random() * 300) + 200);
+            console.log('abc',x);
+        
+            $( "#sdsd" ).css("left",x+'px');
+            $( "#sdsd" ).css("top",x+'px');
+        })
+   </script>
+</body>
+</html>

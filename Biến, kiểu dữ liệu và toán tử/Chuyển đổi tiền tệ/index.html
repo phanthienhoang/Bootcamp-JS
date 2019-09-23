@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#convert {
+			color: #FFFFFF;
+    		background-color: #4CAF50;
+    		height: 30px;
+    		width: 100px;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<input type="text" id="amount">
+		<select id="currencyFrom">
+			<option value="USD" selected>USD</option>
+			<option value="VND">VND</option>
+		</select>
+		<select id="currencyTo">
+			<option value="VND" selected>VND</option>
+			<option value="USD">USD</option>
+		</select>
+		<input type='button' onclick='changeCurrency()' value='Convert'/>
+		 <br />
+	</form>
+    <h3 id='Result'>Result:</h3> 
+    <script type="text/javascript">
+		var val;
+		function changeCurrency() {
+			let fromto = currencyFrom.value + "_" + currencyTo.value;
+			switch (fromto) {
+				case "USD_VND":
+                    val = 23000;
+					result();
+					break;
+				case "VND_USD":
+                    val = 1 / 23000;
+					result();
+					break;
+				case "USD_USD":
+				case "VND_VND":
+                    val = 1;
+					result();
+					break;
+			}			
+		}
+		function result() {
+			let currency = document.getElementById('amount').value;
+			let result = currency * val;
+			document.getElementById('Result').innerHTML = "Result: <b>" + result + "</b> " + currencyTo.value;
+		}
+	</script>
+</body>
+</html>

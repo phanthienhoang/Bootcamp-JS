@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body> <p id="demo"></p>
+    <script>
+        var str = prompt("nhập: ")
+        const UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const LOWER = 'abcdefghijklmnopqrstuvwxyz';
+        const result = [];        
+        for(let x=0; x<str.length; x++)
+        {
+            if(UPPER.includes(str[x]))
+            {
+                result.push(str[x].toLowerCase());
+                console.log('ok',str[x])
+            }
+            else if(LOWER.includes(str[x]))
+            {
+                result.push(str[x].toUpperCase());
+            }
+            else 
+            {       
+                result.push(str[x]);
+            }
+        }       
+        document.getElementById("demo").innerHTML= (result.join(''));
+    </script> 
+</body>
+</html>

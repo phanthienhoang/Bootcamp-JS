@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dictionary</title>
+</head>
+<body>
+    <h2>Bài Tập Từ Điển</h2>
+    <input type="text" value="" id="en">
+    <input type="button" value="translate" onclick="trans()">
+    <h1 id="result"><br></h1>
+    <script>
+        let res = document.getElementById("result");
+        function trans() {
+            let input = document.getElementById("en").value;
+            let EN = ["dog", "cat", "mouse"];
+            let VI = ["chó", "mèo", "chuột"];
+            let flag = false;
+            for (let i = 0; i < EN.length; i++) {
+                if(input === EN[i]) {
+                        alert(VI[i])
+                    flag = true;
+                }
+            }   
+            if(!flag)  alert('ko tìm thấy');
+        }
+    </script>
+</body>
+</html>

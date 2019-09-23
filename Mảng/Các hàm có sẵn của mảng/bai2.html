@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body> 
+    <script>
+        var num = window.prompt("nhập dãy số: ");
+        var a = num.toString();
+        var result = [];
+        for (var x = 0; x < a.length; x++) {
+          if (a[x] % 2 === 0 && a[x+1] % 2 === 0) {
+            result.push('-', a[x+1]);
+          } else {
+            result.push(a[x+1]);
+          }
+        }
+        alert(result.join(''));
+    </script>    
+</body>
+</html>
