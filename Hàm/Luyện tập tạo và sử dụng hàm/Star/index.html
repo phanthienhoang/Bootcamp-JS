@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Start</title>
+</head>
+<body>
+    <script>
+        let array =["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+        let array2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+
+        function kiemtra(x,array){
+            var reg = new RegExp('^[0-9]+$');
+            for(let i =0; i<x.length;i++){
+                while(x.charAt(i).match(reg)){
+                    x  = prompt("giá trị bạn nhập vào ko đc tồn tại số ");
+                }
+            }
+            let flag = false;
+            for(i in array){
+                if(x==array[i]){
+                    alert(array2[i]);
+                    flag = true;
+                }
+            }
+            if(flag==false){
+                alert('ko tìm thấy');
+            }  
+        }
+        
+        let num = prompt('nhập vào 1 chuỗi ')
+        kiemtra(num,array);
+
+    </script>
+</body>
+</html>

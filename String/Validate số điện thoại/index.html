@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function PhoneNumber(str) {
+            var regexp = /((09|03|07|08|05)+([0-9]{8})\b)/g;
+            return regexp.test(str);
+        }
+        var iphone ="0708033319";
+        alert(PhoneNumber(iphone));
+    </script>
+</body>
+</html>

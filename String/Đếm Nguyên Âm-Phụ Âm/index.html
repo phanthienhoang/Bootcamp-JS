@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="demo">
+        <input type="button" id="name2" value="kiemtra" onclick="Seach()">
+        <p id="demo2"></p>
+        <p id="demo3"></p>
+    </form>
+    <script>
+        function kiemtra(str) {
+            let countNa = 0;
+            let countPa = 0;
+            let arr = [];
+            for(let i = 0; i<str.length; i++ ){
+                if (str[i]=="a" || str[i]=="o" || str[i]=="i" || str[i]=="e" || str[i]=="u"){
+                    countNa ++;
+                } else if(str[i]!=" ") {
+                    countPa ++;
+                }
+            }
+            arr.push(countNa);
+            arr.push(countPa);
+            return arr;
+        }
+        function Seach() {
+            var text = document.getElementById("demo").value;
+            let x = kiemtra(text);
+            document.getElementById("demo2").innerHTML = "số nguyên âm là: " + x[0] ;
+            document.getElementById("demo3").innerHTML = "số phụ âm là: " + x[1] ;
+        }
+    </script>
+</body>
+</html>

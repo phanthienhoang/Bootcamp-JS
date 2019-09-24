@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Cau 4</title>
+  </head>
+  <body>
+    <img style="display:none"  width="100" height="100" src="1_1.jpg" alt="" id="imgcanvas" />
+    <canvas
+      id="canvas"
+      width="400px"
+      height="400px"
+      style="border: 2px solid black;"
+    ></canvas>
+    <script>
+        class Animal {
+            constructor(image, x, y, width, height) {
+                this.image = image;
+                this.x = x;
+                this.y = y;
+                this.width = width;
+                this.height = height;
+            }
+
+            render(canvas) {
+                // ctx.clearRect(0, 0, canvas.width, canvas.height);
+                canvas.drawImage(this.image, this.x, this.y, this.width, this.height);
+            }
+        }
+
+        let animalOriginal = new Image();
+        animalOriginal.src = document.getElementById("imgcanvas").src;
+        let ctr = document.getElementById("canvas");
+        let canvas = ctr.getContext("2d");
+        window.onload = function () {
+            let animal = new Animal(animalOriginal, 50, 50, 200, 100);
+            animal.render(canvas);
+        };
+    </script>
+  </body>
+</html>

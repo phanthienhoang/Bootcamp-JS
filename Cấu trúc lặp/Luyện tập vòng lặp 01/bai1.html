@@ -13,14 +13,10 @@
         function count10() {
             var i = 0;
             var count = setInterval(() => {
-                res.innerHTML = `${i}`;
-               
-               
-                if (i=== 99) {
-                    
+                res.innerHTML = `${i}`;             
+                if (i=== 99) {                   
                     clearInterval(count);       
-                    alert('done');
-                
+                    alert('done');               
                 }
                 i++;
                 console.log(i);

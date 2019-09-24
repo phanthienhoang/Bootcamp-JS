@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title></title>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   <script src="jquery.min.js"></script> 
+   <script src="mindmup-editabletable.js"></script>
+   <link rel="stylesheet" href="pure-min.css">
+</head>
+<body >
+   <div id="main" class="">
+       <div><br/><br/>
+           <p>Add New Product</p>
+       </div>
+       <div class="input-group mb-3">
+           <div class="col-sm-4">
+                <input type="text" id='input' class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+           </div>
+           <div class="col-sm-3">
+         <div class="input-group-append">
+           <button class="btn btn-primary bg-success border-0 mb-2" onclick='add();'>Add</button>
+         </div>
+     </div>
+       </div>
+       <div>
+           <p>Display All Product</p>
+       </div>
+       <div>
+           <table class="table table-striped">
+             <thead>
+               <tr>
+                 <th scope="col">#</th>
+                 <th scope="col">Product Name</th>
+                 <th scope="col"></th>
+                 <th scope="col"></th>
+               </tr>
+             </thead>
+             <tbody id="editable">
+             </tbody>
+           </table>
+       </div>
+   </div>
+   <script type="text/javascript">
+       var arr = ["Sony Experia", "Samsung Gallaxy", "Nokia 6","Sony Experia", "Samsung Gallaxy", "Nokia 6",];
+       function display()
+       {     
+                let text = ''; 
+            for (let i = 0; i < arr.length; i++) {
+                text+='<tr>';
+                text+='<td id="edit">' + arr[i] +'</td>';
+                text+='<td>'+ "<button onclick='delete1("+i+")'class='btn btn-primary bg-success border-0 mb-2'>Delete</button>" +'</td>';
+                text+='<td>'+ "<button onclick='edit("+i+")'class='btn btn-primary bg-success border-0 mb-2'>Edit</button>" +'</td>';
+                text+='</tr>';
+            }
+            document.getElementById("editable").innerHTML=text;
+        }
+        function delete1(i){
+            arr.splice(i,1);
+            display();
+        }
+        function add(){
+            let a = document.getElementById('input').value;
+            arr.push(a);
+            display();
+        }
+        function edit(i){
+            let p = prompt('dsadasdas');
+            arr[i] =p;
+            display();
+        }
+        display();
+   </script>
+     <script>
+        $('#editable').editableTableWidget();
+        $('#editable td.edit').on('change', function(evt, newValue) {
+            return false;
+        });
+    
+        $('#editable td').on('change', function(evt, newValue) {
+        $.post( "script.php", { value: newValue })
+            .done(function( data ) {
+                    alert( "Data Loaded: " + data );
+            }); 
+        ;
+    });
+    </script>
+</body>
+</html>

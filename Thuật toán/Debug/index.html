@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <h3>số thứ nhất:</h3><input type="text" id="demo1">
+        <h3>số thứ hai:</h3><input type="text" id="demo2" ><br>
+        <br><input type="button" value="tích 2 số " id="demo3" onclick="PhepNhan()">
+        <p id="demo4"></p>
+    </form>
+    <script>
+        function PhepNhan() {
+        let number1 = document.getElementById("demo1").value;
+        let number2 = document.getElementById("demo2").value;
+        let result = number1*number2;
+        document.getElementById("demo4").innerHTML=result;
+        }
+        let number3 = PhepNhan();
+        document.write("<br>");
+    </script>
+</body>
+</html>

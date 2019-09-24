@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // đếm số nguyên âm
+        // var a = 'aaaaadsadsa-2567889-3-312-122-12-aa';
+        // function check(str){
+        //     // biểu thức chính quy kiểm tra các kí tự là số
+        //     var reg = new RegExp('^[0-9]+$');
+        //     count = 0;
+        //     for(let i =0;i<str.length; i++)
+        //     {
+        //         if(str.charAt(i)== '-'){
+        //             b =str.charAt(i+1).match(reg);
+        //             if(b)
+        //             {   
+        //                 count++;
+        //             }
+        //         }
+        //     }
+        //     return count;
+        // }
+        // document.write(check(a));
+
+        // in ra các số nguyên âm:
+        var a = 'aaaaadsadsa-2567adasdas889-32a-31a2-122-12-aa';
+        let arrString = a.split('-');
+        let result = [];
+        for (let index = 0; index < arrString.length; index++) {
+            let num = arrString[index].split('');
+            let tmp = "";
+            for (let j = 0; j < num.length; j++) {
+                if(isNaN(num[j])) break;
+                tmp += num[j];
+            }
+            
+            if(tmp != "") {
+                result.push(tmp);
+            }
+        }
+        console.log(result);
+
+    </script>
+  
+</body>
+</html>

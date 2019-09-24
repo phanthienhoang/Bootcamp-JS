@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="On" onclick="a.swicthOn();">    
+    <img name='flashlamp' src="black.jpg" alt="" style="width: 300px;height: 200px;">
+    
+    <script>
+        class FlashLamp
+        {
+            constructor(_status,_channels,_volume)
+            {
+                this.status =_status;
+                this.channels =_channels;
+                this.volume =_volume; 
+            }
+            turnOn(){
+                this.status == true;
+                document.flashlamp.src = 'flashlamp.jpg';
+            }
+            turnOff(){
+                this.status == false;
+                document.flashlamp.src = 'black.jpg';
+            }
+        }
+
+        class Controllerr 
+        {
+            constructor(_status,_lamp){
+                this.status = _status;
+                this.lamp=_lamp;
+            }
+            swicthOn(){
+                this.status == true;
+                this.lamp.turnOn();
+            }
+            swicthOff(){
+                this.status == false;
+                this.lamp.turnOff();
+            }
+        }
+ 
+        let bongden = new FlashLamp(true);
+        let a = new Controllerr(false,bongden);
+    </script>
+</body>
+</html>

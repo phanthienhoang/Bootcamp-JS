@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <p id="demo2"></p>
+    <script>
+        //Viết chương trình khởi tạo mảng 2 chiều
+        let a = [
+                [1, 2, 1, 24],
+                [8, 11, 9, 4],
+                [7, 0, 7, 27],
+                [7, 4, 28, 14],
+                [3, 10, 26, 7]
+            ];
+        for(let i in a){
+            console.log("row " + i);
+            for(var j in a[i]){
+                console.log(" " + a[i][j]);
+            }
+        }
+        
+        //in các ký tự trong một mảng theo thứ tự đảo ngược
+        function Array(arr){
+            return arr.reverse();
+
+        }
+        var fruits = [6,7,8,9];
+        document.getElementById("demo").innerHTML= Array(fruits);
+        
+        //Chương trình này đếm số ký tự số trong mảng
+        var arr2 =[];
+        for(let i=0;i<10;i++){
+            arr2[i] = Math.floor(Math.random()*11);
+        }
+        document.getElementById("demo2").innerHTML = arr2;
+        function Count(str){
+                let count = 0;
+            for(let i =0;i<arr2.length;i++){              
+                    count ++;              
+            }
+            return count;
+        }
+        console.log("ok",Count(arr2));
+
+        //Đếm số từ trong 1 chuỗi 
+        function CountString(str){
+            let countString = 0;
+            isSpace = false;
+            for(let i =0; i<str.length;i++){
+                if(i==0 && str[i] != " " && str[i] != '\t'){
+                    countString ++;
+                }
+                if(str[i]==" " || str[i] == "\t"){
+                    isSpace = true;
+                }
+                else if (isSpace){
+                    countString ++;
+                    isSpace = false;
+                }
+            }
+            return countString;
+        }
+        let string = "phan thien hoang";
+        console.log("số từ trong chuỗi: ",CountString(string));
+
+        //Viết một chương trình nhập vào 2 chuỗi 
+        function getStr(){
+            let a = prompt('');
+            let str = "";
+            str += a;
+            document.write("str = " + "'" + str + "'" +"</br>");
+        }
+        let str1 = getStr();
+        let str2 = getStr();
+       if(str1===str2){
+            console.log("giong");
+       }else{
+        console.log("ko giong nhau");
+       } 
+        
+    </script>
+</body>
+</html>
